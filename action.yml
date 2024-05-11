@@ -1,0 +1,15 @@
+name: 'Setup Old Watcom'
+description: 'Setup a pre-Open Watcom environment'
+runs:
+  using: 'composite'
+  steps:
+    - uses: actions/checkout@v4
+      with:
+        repository: btb/watcom
+        ref: v9.5c
+        path: WATCOM
+    - run: |
+        echo "$GITHUB_WORKSPACE/WATCOM/BINNT" >> "$GITHUB_PATH"
+        echo "WATCOM=$GITHUB_WORKSPACE/WATCOM" >> "$GITHUB_ENV"
+        echo "INCLUDE=$INCLUDE;$GITHUB_WORKSPACE/WATCOM/H" >> "$GITHUB_ENV"
+      shell: bash
