@@ -10,6 +10,6 @@ runs:
         path: WATCOM
     - run: |
         echo "$GITHUB_WORKSPACE/WATCOM/BINNT" >> "$GITHUB_PATH"
-        echo "WATCOM=$GITHUB_WORKSPACE/WATCOM" >> "$GITHUB_ENV"
-        echo "INCLUDE=$INCLUDE;$GITHUB_WORKSPACE/WATCOM/H" >> "$GITHUB_ENV"
+        echo "WATCOM=$GITHUB_WORKSPACE\\WATCOM" >> "$GITHUB_ENV"
+        echo "INCLUDE=$INCLUDE;$GITHUB_WORKSPACE\\WATCOM\\H" >> "$GITHUB_ENV"
       shell: bash
