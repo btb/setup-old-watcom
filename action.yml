@@ -1,12 +1,17 @@
 name: 'Setup Old Watcom'
 description: 'Setup a pre-Open Watcom environment'
+inputs:
+  version:
+    description: 'Watcom version: choices = [9.5, 9.5a, 9.5b, 9.5c]'
+    required: false
+    default: '9.5c'
 runs:
   using: 'composite'
   steps:
     - uses: actions/checkout@v4
       with:
         repository: btb/watcom
-        ref: v9.5c
+        ref: v${{ inputs.version }}
         path: WATCOM
     - run: |
         echo "$GITHUB_WORKSPACE/WATCOM/BINNT" >> "$GITHUB_PATH"
