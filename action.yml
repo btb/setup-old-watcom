@@ -14,8 +14,8 @@ runs:
         ref: v${{ inputs.version }}
         path: WATCOM
     - run: |
-        echo "$GITHUB_WORKSPACE/WATCOM/BINNT" >> "$GITHUB_PATH"
         echo "$GITHUB_WORKSPACE/WATCOM/BINB" >> "$GITHUB_PATH"
+        echo "$GITHUB_WORKSPACE/WATCOM/BINNT" >> "$GITHUB_PATH"
         echo "WATCOM=$GITHUB_WORKSPACE\\WATCOM" >> "$GITHUB_ENV"
         echo "INCLUDE=$INCLUDE;$GITHUB_WORKSPACE\\WATCOM\\H" >> "$GITHUB_ENV"
       shell: bash
